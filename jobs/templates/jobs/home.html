@@ -1,0 +1,161 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load staticfiles %}
+    <style>
+img {
+  border-radius: 50%;
+}
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Ajay Pratap Singh</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+
+        <a class="navbar-brand" href="{% url 'home' %}">Ajay Pratap Singh
+        </a>
+      </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="https://www.facebook.com/ajaypratap.singh.313924">Facebook </a>
+              <a class="nav-item nav-link" href="https://www.linkedin.com/in/ajay-pratap-singh-074b34188/">LinkdIn</a> </a>
+            <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+            <a class="nav-item nav-link" href="https://techbuck.in">TechBuck</a>
+          </div>
+        </div>
+      </nav>
+</header>
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <img src="{% static 'ajay.png' %}" alt="Avatar" height="220" width="200"  style="width:200px">
+      <h1 class="jumbotron-heading">Ajay Pratap Singh</h1>
+
+      <br>
+      <p class="lead text-muted">I am a developer that loves coding and is passionate about it. Building Mobile applications for android and IOS is my hobby.
+        Web Development is also my kind of stuff but I love working with backends rather than frontend thing. Python and django are two things I love most.
+        I believe in changing the world with Artificial Intelligence.
+      </p>
+      <p>
+        <a href="mailto:ajaypratap9930@gmail.com" class="btn btn-primary my-2">Email</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+    <h1>Projects</h1>
+    <hr>
+    <br><br>
+      <div class="row">
+      {% for job in jobs.all %}
+      <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class ="card-img-top" height ="380" src="{{job.image.url}}" alt="">
+            <div class="card-body">
+              <p class="card-text">{{job.summary}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+<br><br>
+
+<div class="container">
+  <h3>Skills</h3>
+<p>Mobile Development</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+              <div class="w3-center w3-text-white">80%</div>
+            </div>
+          </div>
+          <br><br>
+  <p>Web Development</p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:65%">
+                <div class="w3-center w3-text-white">65%</div>
+                </div>
+              </div><br><br>
+              <p>Python</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                          <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">
+                            <div class="w3-center w3-text-white">85%</div>
+                          </div>
+                        </div><br><br>
+  <p>Video Editing</p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">
+            <div class="w3-center w3-text-white">75%</div>
+            </div>
+            </div>
+
+
+      </div>
+
+
+
+
+
+
+  <br><br><br><br>
+  <hr>
+  <div class="conatiner">
+<center>
+  <h3>You can hire me for making your projects. Click on the link below to send me an E-mail </h3>
+  <br>
+  <p>
+    <a href="mailto:ajaypratap9930@gmail.com" class="btn btn-primary my-2">Email</a>
+  </p>
+</center>
+</div>
+</main>
+<footer class="text-muted">
+  <div class="container text-center">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+  <p>@Copyright to Ajay {% now "Y" %}</p>
+  </div>
+</footer>
+
+</body>
+</html>
